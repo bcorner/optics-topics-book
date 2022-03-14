@@ -1,4 +1,9 @@
-# Welcome to your Jupyter Book
+# Optics Topics
+
+The plan is for me to take notes on papers and produce book pages with the relevant and necessary technical background information.
+
+![cccutler2](../images/US2605361-drawings-page-2.png)
+
 
 This is a small sample book to give you a feel for how book content is
 structured.
