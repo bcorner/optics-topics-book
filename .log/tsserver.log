@@ -1,0 +1,27 @@
+Info 0    [09:20:00.188] Starting TS Server
+Info 1    [09:20:00.196] Version: 4.2.4
+Info 2    [09:20:00.196] Arguments: /home/bcorner/.nvm/versions/node/v14.16.0/bin/node /home/bcorner/.emacs.d/.cache/lsp/npm/typescript/bin/tsserver --logFile /home/bcorner/optics/optics-topics-book/.log/tsserver.log --logVerbosity info --cancellationPipeName /tmp/50f5a38bc83f35baa94bddbd50277391/tscancellation*
+Info 3    [09:20:00.196] Platform: linux NodeVersion: 14 CaseSensitive: true
+Info 4    [09:20:00.197] ServerMode: undefined syntaxOnly: false hasUnknownServerMode: undefined
+Info 5    [09:20:00.219] Search path: /home/bcorner/optics/optics-topics-book/optics_topics
+Info 6    [09:20:00.220] For info: /home/bcorner/optics/optics-topics-book/optics_topics/image-processing.ipynb :: No config files found.
+Info 7    [09:20:00.224] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 8    [09:20:01.123] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 1 structureChanged: true Elapsed: 898.1105000004172ms
+Info 9    [09:20:01.123] Project '/dev/null/inferredProject1*' (Inferred)
+Info 10   [09:20:01.123] 	Files (19)
+
+Info 11   [09:20:01.123] -----------------------------------------------
+Info 12   [09:20:15.164] Search path: /home/bcorner/optics/optics-topics-book/optics_topics
+Info 13   [09:20:15.164] For info: /home/bcorner/optics/optics-topics-book/optics_topics/image-processing.ipynb :: No config files found.
+Info 14   [09:20:15.165] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 15   [09:20:15.165] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 2 structureChanged: false Elapsed: 0.6928999945521355ms
+Info 16   [09:20:15.165] Project '/dev/null/inferredProject1*' (Inferred)
+Info 17   [09:20:15.165] 	Files (19)
+
+Info 18   [09:20:15.165] -----------------------------------------------
+Info 19   [09:20:19.631] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 20   [09:20:19.663] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 3 structureChanged: false Elapsed: 32.090899996459484ms
+Info 21   [09:20:19.663] Different program with same set of files:: structureIsReused:: 2
+Info 22   [09:20:25.155] Starting updateGraphWorker: Project: /dev/null/inferredProject1*
+Info 23   [09:20:25.180] Finishing updateGraphWorker: Project: /dev/null/inferredProject1* Version: 4 structureChanged: false Elapsed: 24.598400004208088ms
+Info 24   [09:20:25.180] Different program with same set of files:: structureIsReused:: 2

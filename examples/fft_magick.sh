@@ -1,0 +1,1 @@
+convert HNI_0079.JPG -fft +depth +adjoin HNI_0079_fft.png
