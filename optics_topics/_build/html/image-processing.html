@@ -249,6 +249,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-environment">
+   Set up Environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#image-data">
    Image Data
   </a>
@@ -294,6 +299,11 @@ const thebe_selector_output = ".output, .cell_output"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#set-up-environment">
+   Set up Environment
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#image-data">
    Image Data
   </a>
@@ -326,6 +336,162 @@ const thebe_selector_output = ".output, .cell_output"
 <h1>Image Processing<a class="headerlink" href="#image-processing" title="Permalink to this headline">¶</a></h1>
 <section id="section-table-of-contents">
 <h2>Section table of contents<a class="headerlink" href="#section-table-of-contents" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="set-up-environment">
+<h2>Set up Environment<a class="headerlink" href="#set-up-environment" title="Permalink to this headline">¶</a></h2>
+<p>I suppose I better import some modules:</p>
+<ul class="simple">
+<li><p>scipy</p></li>
+<li><p>numpy</p></li>
+<li><p>matplotlib</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>    
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">matplotlib</span> <span class="k">as</span> <span class="nn">mpl</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+
+<span class="o">%</span><span class="k">matplotlib</span> inline
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">scipy</span> <span class="kn">import</span> <span class="n">ndimage</span><span class="p">,</span> <span class="n">fft</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">PIL</span> <span class="kn">import</span> <span class="n">Image</span> 
+<span class="n">image</span> <span class="o">=</span> <span class="n">Image</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;../images/HNI_0079.JPG&#39;</span><span class="p">)</span>
+<span class="n">image</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/image-processing_5_0.png" src="_images/image-processing_5_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">image</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(640, 480)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">imarray</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">asarray</span><span class="p">(</span><span class="n">image</span><span class="p">)</span>
+<span class="n">tint_imarray</span> <span class="o">=</span> <span class="n">imarray</span><span class="p">[:,:,</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span> <span class="n">tint_imarray</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.image.AxesImage at 0x7f0724dc3100&gt;
+</pre></div>
+</div>
+<img alt="_images/image-processing_7_1.png" src="_images/image-processing_7_1.png" />
+</div>
+</div>
+<p>Hmmm, load</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">im</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">load</span><span class="p">()</span>
+<span class="n">im</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(65, 45, 54)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">matplotlib.image</span> <span class="k">as</span> <span class="nn">mpimg</span>
+
+<span class="n">gehry</span> <span class="o">=</span> <span class="n">mpimg</span><span class="o">.</span><span class="n">imread</span><span class="p">(</span><span class="s1">&#39;../images/HNI_0079.JPG&#39;</span><span class="p">)</span>
+<span class="c1">#print(gehry)</span>
+<span class="n">imgplt</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">imshow</span><span class="p">(</span><span class="n">gehry</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/image-processing_10_0.png" src="_images/image-processing_10_0.png" />
+</div>
+</div>
+<p>Uh, let’s make it gray, why not.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">grayimage</span> <span class="o">=</span> <span class="n">image</span><span class="o">.</span><span class="n">convert</span><span class="p">(</span><span class="s2">&quot;L&quot;</span><span class="p">)</span>
+<span class="n">grayimage</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/image-processing_12_0.png" src="_images/image-processing_12_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span> <span class="o">=</span> <span class="n">fft</span><span class="o">.</span><span class="n">fft2</span><span class="p">(</span><span class="n">grayimage</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">res</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(480, 640)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[ 2.66917690e+07      -0.j         -1.39964292e+06-1147714.03679204j
+   2.57491094e+05 +594749.09698088j ... -6.20386968e+05 -233909.22969746j
+   2.57491094e+05 -594749.09698088j -1.39964292e+06+1147714.03679204j]
+ [-3.03381645e+06 -840934.76381738j -1.14718939e+06+2248986.3581505j
+  -4.47152627e+04 -622303.06579693j ...  3.91728096e+05 -457394.91661156j
+  -1.77918329e+05 +542824.34785403j  2.32751297e+06 -685372.75370134j]
+ [-7.08756725e+05+1468642.70388188j  4.31981462e+05 -746960.64380495j
+   1.12946813e+06 +110757.80963733j ...  1.59031868e+04  -71392.96328951j
+   2.66157854e+05 -220554.22920057j  2.95619416e+05 +744092.26883772j]
+ ...
+ [-4.30122749e+05 -617028.83193274j  7.14654790e+05 +109269.59080997j
+   4.12649424e+05 +562398.7771765j  ...  4.07094052e+05  +64093.40896129j
+  -4.67688355e+04 +188397.6983799j  -8.94369432e+05 +212321.37268023j]
+ [-7.08756725e+05-1468642.70388188j  2.95619416e+05 -744092.26883772j
+   2.66157854e+05 +220554.22920057j ... -5.47066376e+05 +400109.09569525j
+   1.12946813e+06 -110757.80963733j  4.31981462e+05 +746960.64380495j]
+ [-3.03381645e+06 +840934.76381738j  2.32751297e+06 +685372.75370134j
+  -1.77918329e+05 -542824.34785403j ... -4.94791822e+05 -399972.6919041j
+  -4.47152627e+04 +622303.06579693j -1.14718939e+06-2248986.3581505j ]]
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 <section id="image-data">
 <h2>Image Data<a class="headerlink" href="#image-data" title="Permalink to this headline">¶</a></h2>
