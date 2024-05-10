@@ -29,4 +29,5 @@ And here is Benjamin Sisko:
 Check out the content pages bundled with this sample book to see more.
 
 
-![railbird-tar](../examples/8cd5698617cff3c84c231d5eed05fce9ebacc31dc0f70e3623b1043233ee1cd5.tar)
+[railbird-tar](../examples/8cd5698617cff3c84c231d5eed05fce9ebacc31dc0f70e3623b1043233ee1cd5.tar)
+
