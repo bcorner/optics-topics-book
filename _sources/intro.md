@@ -24,7 +24,8 @@ And here is Benjamin Sisko:
 
 ![sisko](../images/photonic_amplifiers.jpg)
 
-
+Backyard Astrophotography:
+![astro](../images/20240824_BenCorner_AstroPhoto_DSC00549.jpg)
 
 Check out the content pages bundled with this sample book to see more.
 
